@@ -15,7 +15,6 @@ public class InstagramApp extends Utility{
 
 	ChromeOptions chromeOptions = new ChromeOptions();
 	WebDriver driver = new ChromeDriver(chromeOptions);
-	
 
 	private String temp = "";
 	private int y = 0;
@@ -48,7 +47,7 @@ public class InstagramApp extends Utility{
 		driver.get("https://www.instagram.com/accounts/login");
 		WebElement username = driver.findElement(By.cssSelector("input[name=username]"));
 		username.sendKeys(tourismtn);
-		driver.findElement(By.cssSelector("input[name=password]")).sendKeys("Em$2019!");//Em$2019!
+		driver.findElement(By.cssSelector("input[name=password]")).sendKeys(getProperties("password"));
 		try {
 		driver.findElement(By.xpath("//*[@id=\"react-root\"]/section/main/div/article/div/div[1]/div/form/div[4]/button")).click();
 		}catch(Exception e) {
